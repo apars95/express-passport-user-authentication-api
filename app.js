@@ -5,6 +5,7 @@ const passport = require("passport");
 const MongoStore = require("connect-mongo");
 const signup = require("./routes/signup");
 const signin = require("./routes/signin");
+const signout = require("./routes/signout");
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(passport.session());
 //routes
 app.use("/signup", signup);
 app.use("/signin", signin);
+app.use("/signout", signout);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
